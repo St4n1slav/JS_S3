@@ -286,22 +286,77 @@ console.log(old()); */
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
 
+/* function nMovies (){
+return movies.length;
+}
+console.log(nMovies()); */
+
+
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+
+/* function nameMovies (){
+  let names=movies.map(movie=>movie.Title);
+  return names
+}
+console.log(nameMovies()); */
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 
+/* function movies2k (){
+  let newMovies=movies.filter (y=>{
+    if (+y.Year>=2000) {
+      return true
+    } 
+  return false
+  }
+    )
+  return newMovies;
+}
+console.log(movies2k()); */
+
+
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+//let result = arrNum.reduce((acc, num) => acc + num ,0)
+
+/* function sommaAnni() {
+  let tot = movies.reduce((acc, num) => acc + +num.Year ,0)
+  return tot
+}
+console.log(sommaAnni()); */
+
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 
+
+/**
+ * 
+ * @param {string} imdbID 
+ */
+/* function search(imdbID) {
+  let movie = movies.find(m=>(m.Title===imdbID))
+  return movie
+}
+console.log(search('The Avengers')); */
+
+
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+
+/* function searchYear(imdbID) {
+  let movie = movies.findIndex(m=>(+m.Year===imdbID))
+  return movie
+}
+console.log(searchYear(2012)); */
+
+
+
