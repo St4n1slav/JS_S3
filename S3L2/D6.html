@@ -69,7 +69,12 @@
     </div>
 
     <div id="tableArea">
-
+      <!-- <tr>
+        <td> <img src="" alt="abc"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr> -->
 
     </div>
 
@@ -121,7 +126,7 @@
       */
 
       const changeUrls = function () {
-        let ag = document.querySelectorAll("div a");
+        let ag = document.querySelectorAll('a:not(footer a)');
         ag.forEach(a1=>a1.href = "https://www.google.com")
       }
       changeUrls();
@@ -205,7 +210,7 @@
         let tabella = document.getElementById("tableArea");
         let tel1 = document.createElement ("table");
         let tel2 = document.createElement ("th");
-        for (let col of ["immagine", "nome", "prodotto", "quantità", "prezzo"]){
+        for (let col of ["immagine", "nome prodotto", "quantità", "prezzo"]){
           let tel3 = document.createElement ("td");
           tel3.innerText = col;
           tel2.appendChild(tel3);
@@ -219,8 +224,23 @@
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-      const addRow = function (immagine, nome, prodotto, quantità, prezzo) {
+      const addRow = function (immagine, nomeprodotto, quantita, prezzo) {
+        let html = `       
+          <td> <img src="${immagine}" alt="abc"></td>
+          <td>${nomeprodotto}</td>
+          <td>${quantita}</td>
+          <td>${prezzo}</td>        
+        `
         let tabella = document.querySelector("table");
+        let tr1 = document.createElement ("tr");
+        tr1.innerHTML = html;
+        tabella.appendChild(tr1);
+      }
+      addRow("https://th-thumbnailer.cdn-si-edu.com/bgmkh2ypz03IkiRR50I-UMaqUQc=/1000x750/filters:no_upscale():focal(1061x707:1062x708)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/55/95/55958815-3a8a-4032-ac7a-ff8c8ec8898a/gettyimages-1067956982.jpg"
+        , "Gatto", 2, 1000
+      );
+
+        /* let tabella = document.querySelector("table");
         let tel2 = document.createElement ("tr");
         for (let col of [immagine, nome, prodotto, quantità, prezzo]){
           let tel3 = document.createElement ("td");
@@ -229,15 +249,15 @@
         }
         tabella.appendChild(tel2);
       }
-      addRow("immagine.jpeg", "iphone", "smartphone", 1, 1000 );
+      addRow("immagine.jpeg", "iphone", 1, 1000 ); */
 
       /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
     */
 
       const hideAllImages = function () {
-        let tabella = document.getElementsByTagName(div table tr);
-        //let img = document.tabella.tel2[0].hidden;
+        let img = document.querySelectorAll("table img");
+        img.forEach(ele=>ele.style.display = "none");
       }
       hideAllImages();
 
@@ -246,8 +266,17 @@
     */
 
       const changeColorWithRandom = function () {
+        let h2 = document.getElementById("changeMyColor");
+        function getRandomColorRGB() {
+          const r = Math.floor(Math.random() * 256);
+          const g = Math.floor(Math.random() * 256);
+          const b = Math.floor(Math.random() * 256);
+          return `rgb(${r}, ${g}, ${b})`;
+        }
 
+        h2.onclick = (a)=>{h2.style.color = getRandomColorRGB()}
       }
+      changeColorWithRandom();
     </script>
   </body>
 </html>
