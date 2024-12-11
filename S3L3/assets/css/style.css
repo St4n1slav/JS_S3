@@ -19,7 +19,3 @@ header input, header button {
 ul li{
     border-bottom: 1px solid gray;
 }
-
-ul li span{
-    float: right;
-}

@@ -5,6 +5,7 @@ function addToDo() {
         toDo: list[0].value,
         complete: false
     }
+    
     toDo.push(obj);
     reseteForm(list);
     todoListCreated();
@@ -17,9 +18,10 @@ function reseteForm(node) {
 
 function todoListCreated() {  
     let listNode = document.querySelector("main ul");
+    listNode.innerHTML = "";
     toDo.forEach((ele, i)=>{
         let li = document.createElement("li");
-        li.innerHTML = `${ele.list} <span><button onclick="removeList(${i})">X</button></span>`
+        li.innerHTML = `${ele.toDo} <span><button onclick="removeList(${i})">X</button></span>`
         listNode.appendChild(li)
     })
 }
